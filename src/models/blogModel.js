@@ -4,7 +4,7 @@ const blogSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true,
-        
+
     },
     body: {
         type: String,
@@ -13,17 +13,17 @@ const blogSchema = new mongoose.Schema({
     authorId: {
         type: ObjectId,
         ref: 'author37',
-        required:true
+        required: true
     },
-    tags:[{type :String}],
+    tags: [{ type: String }],
     category: {
         type: String, required: true
     },
-    subcategory: [{type :String}],
-    deletedAt: {type : Date},
+    subcategory: [{ type: String }],
+    deletedAt: { type: Date },
     isDeleted: { type: Boolean, default: false },
     publishedAt: { type: Date },
     isPublished: { type: Boolean, default: false }
-    
-},{timestamps:true})
-module.exports=mongoose.model('blog',blogSchema)
+
+}, { timestamps: true })
+module.exports = mongoose.model('blog', blogSchema)
